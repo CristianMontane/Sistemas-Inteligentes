@@ -1,5 +1,3 @@
-from collections import deque
-
 def ucs_search(initial_state, goal_state, graph):
     # Cola para el fringe (frontera de búsqueda)
     fringe = [(initial_state, [], 0)]  # (estado, camino, costo_acumulado)
@@ -14,7 +12,7 @@ def ucs_search(initial_state, goal_state, graph):
         # Ordenar el fringe por costo y, en caso de empate, por etiqueta
         fringe.sort(key=lambda x: (x[2], x[0]))
 
-        print(f"Fringe actual: {[(node[0], node[2]) for node in fringe]}")  # Muestra estado y costo
+        print(f"Fringe actual: {[node for node in fringe]}")  # Muestra estado y costo
         
         
         # Extraer el nodo con menor costo (y en caso de empate, con menor etiqueta)

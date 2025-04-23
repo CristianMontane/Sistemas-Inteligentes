@@ -19,7 +19,7 @@ def a_star_search(initial_state, goal_state, graph, heuristics):
         # Extraer el nodo con menor f(n) (y en caso de empate, con menor etiqueta)
         current_state, path, cost_g, cost_f = fringe.pop(0)
         
-        print(f"Explorando estado: {current_state} con g={cost_g}, f={cost_f}")
+        print(f"Explorando estado: {current_state} con g = {cost_g}, f = {cost_f}")
         
         # Verificar si hemos llegado al objetivo
         if current_state == goal_state:
@@ -42,7 +42,7 @@ def a_star_search(initial_state, goal_state, graph, heuristics):
                 
                 # Añadir al fringe
                 fringe.append((next_state, path + [current_state], new_cost_g, cost_f))
-                print(f"  Añadido/Actualizado en fringe: {next_state} con g={new_cost_g}, f={cost_f}")
+                print(f"  Añadido/Actualizado en fringe: {next_state} con g = {new_cost_g} + h = {heuristics[next_state]}  = f:{cost_f}")
             else:
                 print(f"  {next_state} ya tiene un camino de menor costo (g={cost_so_far[next_state]})")
     
